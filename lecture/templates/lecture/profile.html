@@ -1,0 +1,46 @@
+{% extends 'lecture/base.html' %}
+{% block title %}Profile{% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'lecture/css/sb-admin.css' %}" />
+
+
+{% block sidebar %}
+			
+<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="#">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-th-list "></i> Attendance List</a>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fa fa-fw  fa-desktop"></i> Share Desktop</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-mortar-board"></i> Classroom <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-mortar-board"></i> Whiteboard </a>
+                            </li>
+                            <li>
+                                <a href="https://classroom98.herokuapp.com/"><i class="fa fa-fw fa-file-video-o"></i> Video</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-file-powerpoint-o"></i> Presentation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,43 @@
+{% extends 'lecture/base.html' %}
+{% block title %}Stream Video{% endblock %}
+{% block classroom_active %}active{% endblock %}
+
+
+
+ {% block sidebar %}
+<script>
+    var vidElement = null;
+    function start(){
+
+        var camAvailable= navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+        if(camAvailable){
+            vidElement = document.getElementById("vid")
+            navigator.mediaDevices.getUserMedia({video:true}).then(function(stream)
+            {
+                vidElement.scrObject=stream;
+                vidElement.play();
+            }
+            )
+
+        }
+    }
+    function stop(){
+        vidElement.pause();
+    }
+</script>    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8  offset-lg-2">
+                <h3 class="mt-5">Live Streaming</h3>
+            </div>
+                </div>
+            </div>
+                {% endblock %}
+                {% block body %}
+                <body>
+                <video id="vid" autoplay style="width: 300px; height:250px;border:1px solid black"></video>
+                <button onclick="start();">Strart Streaming</button>
+                <button onclick="stop();">End</button>
+                </body>
+                {% endblock %}
